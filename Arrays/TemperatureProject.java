@@ -21,6 +21,7 @@ public class TemperatureProject {
             avg += temperature[i];
         }
         System.out.println("\nValues inserted successfully!\n");
+        System.out.println("Average is: " + avg);
 
         tp.findDaysAboveAverage(temperature, avg);
 
@@ -29,8 +30,6 @@ public class TemperatureProject {
 
     public void findDaysAboveAverage(int[] temperature, int avg) {
         avg = avg/temperature.length;
-
-        System.out.println("Average is: " + avg);
 
         System.out.println("\nThe temperature for following days was recorded more than the avg: ");
 

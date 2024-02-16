@@ -9,7 +9,7 @@ public class GCD {
                 result = i;
             }
         }
-
+        
         return result;
     }
     public static void main(String[] args) {
