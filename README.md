@@ -36,7 +36,7 @@ Each folder contains code examples, explanations, and sample questions to help y
 To get started with this repository, simply clone it to your local machine:
 
 ```bash
-git clone https://github.com/zahidparviz/DSA.git
+git clone https://github.com/zahidprvz/DSA.git
 ```
 
 Feel free to explore the folders and dive into the topics that interest you the most. You can review the code examples, read the explanations, and attempt the sample questions provided.
