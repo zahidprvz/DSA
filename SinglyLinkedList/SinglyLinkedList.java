@@ -18,24 +18,21 @@
 
 
 public class SinglyLinkedList {
-    // step # 1
     public Node head;
     public Node tail;
     int size;
 
-    public Node createLinkedList(int nodeValue) {
+    public Node creatSingleLinkedList(int nodeValue) {
         head = new Node();
         Node node = new Node();
 
-        //step # 2
         node.next = null;
         node.value = nodeValue;
-        size = 1;
 
-        // step # 3
         head = node;
-        tail = node;
-
+        tail = null;
+        size = 1;
+        
         return head;
     }
 }
