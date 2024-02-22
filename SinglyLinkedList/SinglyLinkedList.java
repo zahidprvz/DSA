@@ -35,4 +35,33 @@ public class SinglyLinkedList {
         
         return head;
     }
+
+    public void insertSingleElement(int nodeValue, int location) {
+        Node node = new Node();
+        node.value = nodeValue;
+
+        if(head == null) {                  // if linkedlist is not already created
+            creatSingleLinkedList(nodeValue);
+            return;
+        } else if(location == 0) {          // inserting value at beginning of linkedlist
+            node.next = head;
+            head = node;
+        } else if(location > size) {        // if location is greator than the size of linkedlist
+            node.next = null;
+            tail.next = node;
+            tail = node;
+        } else {
+            Node tempNode = head; 
+            int index = 0;
+
+            while(index < location -1) {
+                tempNode = tempNode.next;
+                index++;
+            }
+            Node nextNode = tempNode.next;
+            tempNode.next = node;
+            node.next = nextNode;
+        }
+        size++;
+    }
 }
