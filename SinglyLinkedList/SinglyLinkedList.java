@@ -40,24 +40,25 @@ public class SinglyLinkedList {
         Node node = new Node();
         node.value = nodeValue;
 
-        if(head == null) {                  // if linkedlist is not already created
+        if(head == null) {
             creatSingleLinkedList(nodeValue);
             return;
-        } else if(location == 0) {          // inserting value at beginning of linkedlist
+        } else if(location == 0) {
             node.next = head;
             head = node;
-        } else if(location > size) {        // if location is greator than the size of linkedlist
+        } else if(location >= size) {
             node.next = null;
             tail.next = node;
             tail = node;
         } else {
-            Node tempNode = head; 
+            Node tempNode = head;
             int index = 0;
 
-            while(index < location -1) {
+            while(index > location -1) {
                 tempNode = tempNode.next;
                 index++;
             }
+
             Node nextNode = tempNode.next;
             tempNode.next = node;
             node.next = nextNode;
