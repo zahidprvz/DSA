@@ -13,6 +13,17 @@ public class LinkedList {
         sLL.insertSingleElement(34, 2);     // inserting element at last index
         //System.out.println(sLL.head.next.next.value);
 
+        sLL.insertSingleElement(98, 3);
+        sLL.insertSingleElement(117, 4); 
+
         sLL.singleLinkedListTraversal();
+
+        sLL.deleteWholeLinkedList();
+
+        sLL.singleLinkedListTraversal();
+
+        //sLL.searchNode(35);
+
+
     }
 }
