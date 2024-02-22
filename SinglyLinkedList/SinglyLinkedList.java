@@ -1,60 +1,39 @@
-/*
- * Steps to Create a Single LinkedList with one node
- * 
- * step # 1 
- * 
- * create head and tail and initialize them with null
- * 
- * step # 2
- * 
- * assign node value to nodeValue & and next reference to null as there is only one element
- * 
- * step # 3
- * 
- * Link head and tail with the node
- */
-
-
-
-
 public class SinglyLinkedList {
     public Node head;
     public Node tail;
     int size;
 
     public Node creatSingleLinkedList(int nodeValue) {
-        head = new Node();
         Node node = new Node();
-
-        node.next = null;
         node.value = nodeValue;
+        node.next = null;
 
         head = node;
-        tail = null;
+        tail = node;
         size = 1;
         
-        return head;
+        return node;
     }
 
     public void insertSingleElement(int nodeValue, int location) {
         Node node = new Node();
         node.value = nodeValue;
 
-        if(head == null) {
+        if(head == null) {                  // if linkedlist does not exist
             creatSingleLinkedList(nodeValue);
             return;
-        } else if(location == 0) {
+        } else if(location == 0) {          // if we want to insert at beginning
             node.next = head;
             head = node;
-        } else if(location >= size) {
+        } else if(location >= size) {       // if we want to insert at last
             node.next = null;
             tail.next = node;
             tail = node;
-        } else {
+        } else {                            // if we want to insert at any specific location
             Node tempNode = head;
             int index = 0;
 
-            while(index > location -1) {
+            while(index < location - 1) { // fix the condition here
                 tempNode = tempNode.next;
                 index++;
             }
@@ -63,6 +42,24 @@ public class SinglyLinkedList {
             tempNode.next = node;
             node.next = nextNode;
         }
-        size++;
+        size++;                             // increase size of linkedlist by 1 after inserting an element
+    }
+
+    // SingleLinkedList Traversal
+    public void singleLinkedListTraversal() {
+        if(head == null) {
+            System.out.println("LL does not exist!");
+        } else {
+            Node tempNode = head;
+
+            for(int i = 0; i < size; i++) {
+                System.out.print(tempNode.value);
+                if(i != size -1) {
+                    System.out.print(" --> ");
+                }
+                tempNode = tempNode.next;
+            }
+        }
+        System.out.println("\n");
     }
 }
